@@ -1,3 +1,21 @@
+getting started:
+----------------
+pip install -e .
+----------------
+
+Model functionality
+-------------------
+train data_with_targets_path model_config_path
+predict data_with_no_targets_path saved_model_path save_preds_path
+evaluate target_path preds_path
+-------------------
+run_pipeline config_path
+-------------------
+
+
+
+
+
 ml_project
 ==============================
 
