@@ -3,7 +3,7 @@ name: 'CI with: Build'
 on: 
   push:
     branches: 
-      - master
+      - main
       - hw1
   pull_request:
     branches: master
