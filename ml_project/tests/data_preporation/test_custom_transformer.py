@@ -14,10 +14,10 @@ class TestCustomTransformer(unittest.TestCase):
         mean = X_norm.mean()
 
         epsilon = 1e-3
-        self.assertTrue(all(mean > 0-epsilon))
-        self.assertTrue(all(mean < 0+epsilon))
-        self.assertTrue(all(std > 1-epsilon))
-        self.assertTrue(all(std < 1+epsilon))
+        self.assertTrue(all(mean > 0 - epsilon))
+        self.assertTrue(all(mean < 0 + epsilon))
+        self.assertTrue(all(std > 1 - epsilon))
+        self.assertTrue(all(std < 1 + epsilon))
 
 
 if __name__ == "__main__":

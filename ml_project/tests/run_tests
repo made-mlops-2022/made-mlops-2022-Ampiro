@@ -1,10 +1,10 @@
 #!/venv/bin/python
 
-from tests.data_preporation.test_custom_transformer import TestCustomTransformer
-from tests.models.test_train import TestModelTraining
-from tests.models.test_predict import TestModelPrediction
-from tests.models.test_evaluate import TestModelEvaluation
-from tests.pipeline_tests.test_pipeline import TestPipeline
+from tests.data_preporation.test_custom_transformer import TestCustomTransformer  # noqa
+from tests.models.test_train import TestModelTraining                             # noqa
+from tests.models.test_predict import TestModelPrediction                         # noqa
+from tests.models.test_evaluate import TestModelEvaluation                        # noqa
+from tests.pipeline_tests.test_pipeline import TestPipeline                       # noqa
 
 
 import unittest

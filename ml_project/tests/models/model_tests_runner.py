@@ -1,6 +1,6 @@
-from .test_train import TestModelTraining
-from .test_predict import TestModelPrediction
-from .test_evaluate import TestModelEvaluation
+from .test_train import TestModelTraining  # noqa
+from .test_predict import TestModelPrediction  # noqa
+from .test_evaluate import TestModelEvaluation  # noqa
 
 import unittest
 

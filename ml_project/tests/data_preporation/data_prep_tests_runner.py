@@ -1,4 +1,4 @@
-from .test_custom_transformer import TestCustomTransformer
+from .test_custom_transformer import TestCustomTransformer  # noqa
 
 import unittest
 

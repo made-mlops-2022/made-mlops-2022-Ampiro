@@ -24,7 +24,12 @@ jobs:
         cd ml_project
         pip install -r requirements.txt
         pip install -e .
-        
+    
+    - name: Checking code with flake8
+      run: |
+        cd ml_project
+        flake8 reports/ tests/ src/ notebooks/
+
     - name: Test programm
       run: |
         cd ml_project
