@@ -1,0 +1,18 @@
+#!/venv/bin/python
+
+from tests.data_preporation.test_custom_transformer import TestCustomTransformer
+from tests.models.test_train import TestModelTraining
+from tests.models.test_predict import TestModelPrediction
+from tests.models.test_evaluate import TestModelEvaluation
+from tests.pipeline_tests.test_pipeline import TestPipeline
+
+
+import unittest
+
+
+def run_tests():
+    unittest.main()
+
+
+if __name__ == "__main__":
+    run_tests()

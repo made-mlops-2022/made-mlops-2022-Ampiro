@@ -14,5 +14,8 @@ setup(
             "pipeline=src.models.console_functions.pipeline:pipeline_command"
         ]
     },
+    scripts=[
+        "tests/run_tests"
+    ],
     license='',
 )
