@@ -1,7 +1,7 @@
 data:
   data_path: "tests/pipeline_tests/data/data.csv"
-  train_data_path: "tests/pipeline_tests/data/train_data.csv"
-  test_data_path: "tests/pipeline_tests/data/test_data.csv"
+  train_data_path: "tests/pipeline_tests/data/splits/train_data.csv"
+  test_data_path: "tests/pipeline_tests/data/splits/test_data.csv"
 
   params:
     target: "condition"
