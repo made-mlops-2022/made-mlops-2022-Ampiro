@@ -1,4 +1,4 @@
-name: 'CI with: Build'
+name: 'CI for hw1'
 
 on: 
   push:
@@ -22,6 +22,7 @@ jobs:
     - name: Install project
       run: |
         cd ml_project
+        pip install -r requirements.txt
         pip install -e .
         
     - name: Test programm
