@@ -101,5 +101,7 @@ venv.bak/
 outputs
 
 # Tests output files
-tests/pipeline_tests/models
+tests/pipeline_tests/models/*.json
+tests/pipeline_tests/models/*.pkl
+tests/pipeline_tests/models/*.csv
 tests/pipeline_tests/data/splits/*.csv
