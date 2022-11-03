@@ -1,4 +1,5 @@
 import pandas as pd
+import logging
 
 
 def predict_model(
@@ -13,4 +14,8 @@ def predict_model(
     Returns:
         pd.Series: prediction result
     """
-    return model.predict(features)
+    logger = logging.getLogger("PREDICT")
+    logger.info("Making prediction...")
+    predictions = pd.Series(model.predict(features))
+    logger.info("Predictions are made.")
+    return predictions
