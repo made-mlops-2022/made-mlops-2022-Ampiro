@@ -1,9 +1,12 @@
-from .training_params import TrainingParams
-from .pipeline_params import PipelineParams
 from .data_params import DataParams
+from .logging_params import LoggingParams
+from .model_params import ModelParams
+from .pipeline_params import PipelineParams
+
 
 __all__ = [
-    "TrainingParams",
-    "PipelineParams",
-    "DataParams"
+    "DataParams",
+    "LoggingParams",
+    "ModelParams",
+    "PipelineParams"
 ]
