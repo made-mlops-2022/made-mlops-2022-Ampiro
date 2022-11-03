@@ -1,6 +1,7 @@
 getting started:
 ~~~
 pip install -e .
+pip install -r requirements.txt
 ~~~
 
 All commands are runned only with config file, where information about data and model is stored
@@ -20,10 +21,6 @@ pipeline config_name    <- running all functions above
 First word represents data with which we are working: preprocessed or raw. Second word represents model which will be used in pipeline
 
 
-
-
-
-
 ml_project
 ==============================
 
@@ -32,50 +29,87 @@ A short description of the project.
 Project Organization
 ------------
 
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
+    ├── README.md                       <- The top-level README for developers using this project.
     ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
+    │   ├── processed                   <- The preprocessed and divided into train test splits data.
+    │   └── raw                         <- The original, immutable data dump.
     │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
+    ├── models                          <- Trained and serialized models, model predictions, or model summaries
     │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
+    ├── notebooks                       <- Jupyter notebooks. Naming convention is a number (for ordering),
+    │                                      the creator's initials, and a short `-` delimited description, e.g.
+    │                                      `1.0-jqp-initial-data-exploration`.
     │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
+    ├── reports                         <- Generated analysis of Data.
     │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
+    ├── requirements.txt                <- The requirements file for reproducing the analysis environment, e.g.
+    │                                      generated with `pip freeze > requirements.txt`
     │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
+    ├── setup.py                        <- makes project pip installable (pip install -e .) so src can be imported
     │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
+    ├── configs                         <- Configuration files
     │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
+    ├── src                             <- Source code for use in this project.
+    │   ├── __init__.py                 <- Makes src a Python module
     │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
+    |   ├── config_classes              <- Directory with dataclasses for project configuration
+    |   |
+    │   ├── data_preporation    
+    │   │   ├── __init__.py
+    │   │   ├── data_functionality.py   <- Scripts to download or generate data
+    │   │   ├── data_transformer.py     <- Custom transformer
+    │   │   └── read_config.py          <- Script for readding dataclasses from provided config file
     │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
+    │   └── models                      <- Scripts for work with models
+    │       ├── __init__.py      
+    │       │       
+    │       ├── base_functionality      <- Basic model functions
+    │       │   ├── __init__.py
+    │       │   ├── train_model.py
+    │       │   ├── predict_model.py
+    │       │   ├── evaluate_model.py
+    │       │   └── model_io.py         <- Scripts for saving and downloading model and is predictions
+    │       │   
+    │       └── console_functions       <- Functions what are used from console to work with model
+    │           │                          their usage was described above
+    │           ├── __init__.py
+    │           ├── train.py
+    │           ├── predict.py
+    │           ├── evaluate.py
+    │           └── pipeline.py
     │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+    ├── tests                           <- Unittests
+    │   ├── __init__.py
+    │   ├── data_generator.py           <- Generator of fake data to test on
+    |   |
+    │   ├── data_preporation            <- Test of data manipulating functions
+    │   │   ├── __init__.py
+    │   │   ├── data_prep_tests_runner.py 
+    │   │   └── test_custom_transformer.py
+    |   |
+    |   ├── models                      <- Tests of model base functionality
+    |   |   ├── __init__.py
+    |   |   ├── test_train.py
+    |   |   ├── test_predict.py
+    |   |   ├── test_evaluate.py
+    |   |   └── model_tests_runner.py
+    |   |
+    |   ├── pipeline_tests              <- Directory with files necessary of whole model
+    |   |   |                              pipeline training
+    |   |   ├── __init__.py
+    |   |   |
+    |   |   ├── data
+    |   |   |   ├── splits
+    |   |   |   └── data.csv
+    |   |   |
+    |   |   ├── models                  <- Directory where model, it's predictions and metrics are saved
+    |   |   |
+    |   |   ├── test_config.yaml        <- Test pipeline configuration
+    |   |   └── test_pipeline.py        <- Pipeline test
+    |   |
+    |   └── run_tests                   <- Console command to run all tests
+    |
+    └── tox.ini                         <- tox file with settings for running tox; see tox.readthedocs.io
 
 
 --------
