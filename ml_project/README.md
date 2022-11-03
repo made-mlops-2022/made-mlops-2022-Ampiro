@@ -1,16 +1,24 @@
 getting started:
-----------------
+~~~
 pip install -e .
-----------------
+~~~
 
-Model functionality
--------------------
-train data_with_targets_path model_config_path
-predict data_with_no_targets_path saved_model_path save_preds_path
-evaluate target_path preds_path
--------------------
-run_pipeline config_path
--------------------
+All commands are runned only with config file, where information about data and model is stored
+~~~
+train config_name       <- training model 
+predict config_name     <- making predictions 
+evaluate config_name    <- calciulating metrics of model predictions
+pipeline config_name    <- running all functions above
+~~~
+
+`config_name` - is a config file from configs. There are 4 prepared config files. 
+- prep_rf.yaml          
+- prep_svm.yaml
+- raw_rf.yaml
+- raw_svm.yaml
+
+First word represents data with which we are working: preprocessed or raw. Second word represents model which will be used in pipeline
+
 
 
 
