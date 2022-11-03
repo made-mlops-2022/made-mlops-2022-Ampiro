@@ -1,0 +1,4 @@
+defaults:
+    - data: raw
+    - logging: info
+    - model: random_forest
