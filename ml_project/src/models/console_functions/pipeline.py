@@ -13,8 +13,11 @@ import sys
 def commands_runner():
     command = sys.argv[0].split("/")[-1]
     config_name = sys.argv[1]
+    config_path = "../../../configs" if len(
+        sys.argv) == 2 else "../../../" + sys.argv[2]
+
     initialize(
-        config_path="../../../configs",
+        config_path=config_path,
         version_base=None
     )
     cfg = compose(config_name=config_name)
@@ -30,8 +33,10 @@ def commands_runner():
 
 def pipeline_command():
     config_name = sys.argv[1]
+    config_path = "../../../configs" if len(
+        sys.argv) == 2 else "../../../" + sys.argv[2]
     initialize(
-        config_path="../../../configs",
+        config_path=config_path,
         version_base=None
     )
     cfg = compose(config_name=config_name)

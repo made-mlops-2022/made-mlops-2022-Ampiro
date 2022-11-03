@@ -99,3 +99,6 @@ venv.bak/
 
 # Hydra output
 outputs
+
+# Tests output files
+tests/pipeline_tests/models
