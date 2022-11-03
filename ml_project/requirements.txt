@@ -50,7 +50,6 @@ pexpect==4.8.0
 phik==0.12.2
 pickleshare==0.7.5
 Pillow==9.2.0
-pkg_resources==0.0.0
 plotly==5.11.0
 prompt-toolkit==3.0.31
 psutil==5.9.3
