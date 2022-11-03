@@ -102,4 +102,4 @@ outputs
 
 # Tests output files
 tests/pipeline_tests/models
-tests/pipeline_tests/data/splits
+tests/pipeline_tests/data/splits/*.csv
