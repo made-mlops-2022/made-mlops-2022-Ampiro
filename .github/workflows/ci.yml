@@ -1,0 +1,36 @@
+name: 'CI for hw1'
+
+on: 
+  push:
+    branches: 
+      - main
+      - hw1
+  pull_request:
+    branches: master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.8"
+        
+    - name: Install project
+      run: |
+        cd ml_project
+        pip install -r requirements.txt
+        pip install -e .
+    
+    - name: Checking code with flake8
+      run: |
+        cd ml_project
+        flake8 reports/ tests/ src/ notebooks/
+
+    - name: Test programm
+      run: |
+        cd ml_project
+        run_tests

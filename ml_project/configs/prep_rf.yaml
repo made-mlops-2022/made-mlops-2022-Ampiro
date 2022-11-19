@@ -1,0 +1,4 @@
+defaults:
+    - data: make_preproc
+    - logging: info
+    - model: random_forest

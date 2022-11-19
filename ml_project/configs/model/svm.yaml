@@ -1,0 +1,6 @@
+save_path: "models/"
+type: "SVM"
+
+params: 
+  C: 10
+  kernel: "rbf"

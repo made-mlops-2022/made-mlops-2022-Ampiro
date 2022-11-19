@@ -1,0 +1,19 @@
+data:
+  data_path: "tests/pipeline_tests/data/data.csv"
+  train_data_path: "tests/pipeline_tests/data/splits/train_data.csv"
+  test_data_path: "tests/pipeline_tests/data/splits/test_data.csv"
+
+  params:
+    target: "condition"
+    make_preporations: True
+
+logging:
+  level: "critical"
+
+model:
+  save_path: "tests/pipeline_tests/models/"
+  type: "SVM"
+
+  params: 
+    C: 10
+    kernel: "rbf"
