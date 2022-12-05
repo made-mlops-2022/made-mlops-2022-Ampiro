@@ -76,7 +76,7 @@ target/
 .ipynb_checkpoints/
 
 # exclude data from source control by default
-/data/
+ml_project/data/
 
 # Mac OS-specific storage files
 .DS_Store
@@ -101,7 +101,7 @@ venv.bak/
 outputs
 
 # Tests output files
-tests/pipeline_tests/models/*.json
-tests/pipeline_tests/models/*.pkl
-tests/pipeline_tests/models/*.csv
-tests/pipeline_tests/data/splits/*.csv
+ml_project/tests/pipeline_tests/models/*.json
+ml_project/tests/pipeline_tests/models/*.pkl
+ml_project/tests/pipeline_tests/models/*.csv
+ml_project/tests/pipeline_tests/data/splits/*.csv

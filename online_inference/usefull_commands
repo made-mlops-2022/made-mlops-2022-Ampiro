@@ -1,0 +1,25 @@
+# Building image from online_inference/
+docker build . --tag ampiro/mlops_hw2:v1
+
+# Commands to run container from image and enter it with bash
+docker run -it -d --name coampiro ampiro/mlops_hw2:v1
+# running test from local machine
+docker exec -it coampiro bash ./run_tests.sh
+# enter container with bash
+docker exec -it coampiro bash
+
+# Stop container
+docker stop coampiro
+
+# Deleating container and image
+docker rm coampiro 
+docker image rm ampiro/mlops_hw2:v1
+
+# Pushing image to docker hub
+docker push ampiro/mlops_hw2:v1
+
+# Pulling image from hub
+docker pull ampiro/mlops_hw2:v1
+
+
+

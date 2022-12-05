@@ -1,0 +1,9 @@
+# Python cache
+*__pycache__
+
+# Unnecessary data files
+
+
+# Other
+Dockerfile
+commands
